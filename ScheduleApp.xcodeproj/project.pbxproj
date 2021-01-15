@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA648A1B25AB2C0F004A6FE0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA648A1A25AB2C0F004A6FE0 /* ReportViewController.swift */; };
+		FA648A1D25AB2C99004A6FE0 /* CountUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA648A1C25AB2C99004A6FE0 /* CountUpViewController.swift */; };
+		FA648A1F25AB2D09004A6FE0 /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA648A1E25AB2D09004A6FE0 /* TimerSettingViewController.swift */; };
+		FA648A2125AB2D5E004A6FE0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA648A2025AB2D5E004A6FE0 /* TimerViewController.swift */; };
 		FAA42BAF25A8853A00B2D260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA42BAE25A8853A00B2D260 /* AppDelegate.swift */; };
 		FAA42BB125A8853A00B2D260 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA42BB025A8853A00B2D260 /* SceneDelegate.swift */; };
 		FAA42BB325A8853A00B2D260 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA42BB225A8853A00B2D260 /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA648A1A25AB2C0F004A6FE0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		FA648A1C25AB2C99004A6FE0 /* CountUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountUpViewController.swift; sourceTree = "<group>"; };
+		FA648A1E25AB2D09004A6FE0 /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
+		FA648A2025AB2D5E004A6FE0 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		FAA42BAB25A8853A00B2D260 /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA42BAE25A8853A00B2D260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA42BB025A8853A00B2D260 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +67,10 @@
 				FAA42BAE25A8853A00B2D260 /* AppDelegate.swift */,
 				FAA42BB025A8853A00B2D260 /* SceneDelegate.swift */,
 				FAA42BB225A8853A00B2D260 /* ViewController.swift */,
+				FA648A1A25AB2C0F004A6FE0 /* ReportViewController.swift */,
+				FA648A1C25AB2C99004A6FE0 /* CountUpViewController.swift */,
+				FA648A1E25AB2D09004A6FE0 /* TimerSettingViewController.swift */,
+				FA648A2025AB2D5E004A6FE0 /* TimerViewController.swift */,
 				FAA42BB425A8853A00B2D260 /* Main.storyboard */,
 				FAA42BB725A8853C00B2D260 /* Assets.xcassets */,
 				FAA42BB925A8853C00B2D260 /* LaunchScreen.storyboard */,
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA648A1B25AB2C0F004A6FE0 /* ReportViewController.swift in Sources */,
 				FAA42BB325A8853A00B2D260 /* ViewController.swift in Sources */,
+				FA648A1D25AB2C99004A6FE0 /* CountUpViewController.swift in Sources */,
+				FA648A2125AB2D5E004A6FE0 /* TimerViewController.swift in Sources */,
 				FAA42BAF25A8853A00B2D260 /* AppDelegate.swift in Sources */,
+				FA648A1F25AB2D09004A6FE0 /* TimerSettingViewController.swift in Sources */,
 				FAA42BB125A8853A00B2D260 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PUKK4A3AZ;
 				INFOPLIST_FILE = ScheduleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.Norihiro.Nakano.ScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PUKK4A3AZ;
 				INFOPLIST_FILE = ScheduleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.Norihiro.Nakano.ScheduleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
