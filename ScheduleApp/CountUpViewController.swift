@@ -8,32 +8,70 @@
 
 import UIKit
 
-class CountUpViewController: UIViewController {
+class CountUpViewController: UIViewController,backgroundTimerDelegate {
     
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var startStop: UIButton!
     
     
-    var nowTime = Date() //現時点での日時・時刻を習得
     var timer:Timer!
+    var timer_sec = 0
+    
+    //SceneDelegateに追加したプロトコルに批准させる
+    var timerIsBackground = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //SceneDelegateを取得
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let sceneDelegate = windowScene.delegate as? SceneDelegate else {
+                return
+        }
         
+        sceneDelegate.delegate = self
+    }
+    
+    //バックグラウンドへの移行を確認
+    func checkBackground() {
+        if let _ = timer {
+            timerIsBackground = true
+        }
+    }
+    
+    func setCurrentTimer(_ elapsedTime: Int) {
+        //一時停止してから(timerをnilになったとき)バックグラウンドに移行した時にはタイマーは動かさない
+        if self.timer != nil {
+            //バックグラウンドでの経過時間を加算
+            self.timer_sec += elapsedTime
+            
+            let second = timer_sec % 60
+            let minutes = timer_sec / 60 % 60
+            let hour = timer_sec / 3600
+            
+            self.TimerLabel.text = String(format: "%02d:%02d:%02d", hour, minutes, second)
+            
+            //再びタイマー起動
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+            
+        }
         
     }
     
+    //起動中のタイマー破棄
+    func deleteTimer() {
+        if let _ = timer{
+            timer.invalidate()
+        }
+    }
+    
     @objc func updateTimer(_ timer:Timer){
-        //タイマー開始からのインターバル時間
-        let currentTime = Date().timeIntervalSince(nowTime)
-        
-        print(currentTime)
-        
-        let second = Int(currentTime) % 60
-        let minutes = Int(currentTime) / 60 % 60
-        let hour = Int(currentTime) / 3600 
+        self.timer_sec += 1
+
+        let second = timer_sec % 60
+        let minutes = timer_sec / 60 % 60
+        let hour = timer_sec / 3600
         
         self.TimerLabel.text = String(format: "%02d:%02d:%02d", hour, minutes, second)
     }
@@ -43,7 +81,7 @@ class CountUpViewController: UIViewController {
     @IBAction func startStopButton(_ sender: Any) {
         if self.timer == nil {
             //動作するタイマーを一つに保つため、timerが存在しない時だけ、タイマーを生成し動作させる
-            self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
             startStop.setTitle("一時停止", for: .normal)
         }else{
             //一時停止した時のアクション
