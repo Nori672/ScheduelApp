@@ -87,7 +87,7 @@ class CountUpViewController: UIViewController,backgroundTimerDelegate {
             //一時停止した時のアクション
             self.timer.invalidate() //タイマー停止
             self.timer = nil //timerをnilに戻す
-            startStop.setTitle("開始", for: .normal)
+            startStop.setTitle("再開", for: .normal)
         }
     }
     
