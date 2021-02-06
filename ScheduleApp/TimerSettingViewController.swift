@@ -342,7 +342,7 @@ class TimerSettingViewController: UIViewController,UIPickerViewDelegate,UIPicker
     
     @IBAction func startStopButton(_ sender: Any) {
         if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(studyTimer(_:)), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(studyTimer(_:)), userInfo: nil, repeats: true)
             startStop.setTitle("一時停止", for: .normal)
         }else{
             self.timer.invalidate()
