@@ -29,7 +29,7 @@ class ReportWeekViewController: UIViewController, IndicatorInfoProvider {
     }
     
     func settingBarChartData(){
-        let Data = realm.objects(saveData.self)
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "y/MM/dd/HH/mm", options: 0, locale: Locale(identifier: "ja_JP"))
         
