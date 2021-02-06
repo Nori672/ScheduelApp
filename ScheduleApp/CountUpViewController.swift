@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CountUpViewController: UIViewController,backgroundTimerDelegate {
     
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var startStop: UIButton!
+    @IBOutlet weak var finishButton: UIButton!
     
     
     var timer:Timer!
     var timer_sec = 0
     
-    //SceneDelegateに追加したプロトコルに批准させる
+    let realm = try!Realm()
+    let finishDate = Date()
+    
+    //SceneDelegateに追加したプロトコルにある定数
     var timerIsBackground = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startStop.layer.borderColor = UIColor.black.cgColor
+        startStop.layer.borderWidth = 2
+        startStop.layer.cornerRadius = 5
+        finishButton.layer.borderColor = UIColor.red.cgColor
+        finishButton.layer.borderWidth = 2
+        finishButton.layer.cornerRadius = 5
 
         // Do any additional setup after loading the view.
         //SceneDelegateを取得
@@ -52,7 +64,7 @@ class CountUpViewController: UIViewController,backgroundTimerDelegate {
             
             self.TimerLabel.text = String(format: "%02d:%02d:%02d", hour, minutes, second)
             
-            //再びタイマー起動
+            //バックグラウンドの結果を反映したあと再びタイマー起動
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
             
         }
@@ -94,8 +106,21 @@ class CountUpViewController: UIViewController,backgroundTimerDelegate {
     
     //計測終了ボタン
     @IBAction func finishButton(_ sender: Any) {
-        self.timer.invalidate()
-        self.timer = nil
+        if timer != nil{
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        //Realmに終了した日付と勉強時間を保存
+        let CountUpSaveData = saveData()
+        CountUpSaveData.date = finishDate
+        CountUpSaveData.totalStudyTime_sec = self.timer_sec
+        
+        try! realm.write(){
+            realm.add(CountUpSaveData)
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     /*

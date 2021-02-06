@@ -1,15 +1,17 @@
 //
-//  ReportViewController.swift
+//  ReportMonthViewController.swift
 //  ScheduleApp
 //
-//  Created by Norihiro.Nakano on 2021/01/10.
+//  Created by Norihiro.Nakano on 2021/01/23.
 //  Copyright © 2021 Norihiro.Nakano. All rights reserved.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class ReportViewController: SegmentedPagerTabStripViewController {
+class ReportMonthViewController: UIViewController, IndicatorInfoProvider {
+    
+    var iteminfo:IndicatorInfo = "月" //ボタンのタイトルに使われる
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,12 +19,10 @@ class ReportViewController: SegmentedPagerTabStripViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let weekVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "weekGraph")
-        let monthVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "monthGraph")
-        let childViewControllers:[UIViewController] = [weekVC, monthVC]
-        return childViewControllers
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return iteminfo
     }
+    
 
     /*
     // MARK: - Navigation
