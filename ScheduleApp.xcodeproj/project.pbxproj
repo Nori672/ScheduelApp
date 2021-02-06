@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		85829C6956F3D28A250AB1CC /* Pods_ScheduleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04906EF2EC44BFB47637BA90 /* Pods_ScheduleApp.framework */; };
-		FA5EAAE025BC0BC10011A1DE /* ReportWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EAADF25BC0BC10011A1DE /* ReportWeekViewController.swift */; };
-		FA5EAAE225BC0C140011A1DE /* ReportMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EAAE125BC0C140011A1DE /* ReportMonthViewController.swift */; };
-		FA5EAAEE25BDB4A50011A1DE /* saveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EAAED25BDB4A50011A1DE /* saveData.swift */; };
-		FA648A1B25AB2C0F004A6FE0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA648A1A25AB2C0F004A6FE0 /* ReportViewController.swift */; };
 		FA648A1D25AB2C99004A6FE0 /* CountUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA648A1C25AB2C99004A6FE0 /* CountUpViewController.swift */; };
 		FA648A1F25AB2D09004A6FE0 /* TimerSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA648A1E25AB2D09004A6FE0 /* TimerSettingViewController.swift */; };
 		FAA42BAF25A8853A00B2D260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA42BAE25A8853A00B2D260 /* AppDelegate.swift */; };
@@ -26,10 +22,6 @@
 		04906EF2EC44BFB47637BA90 /* Pods_ScheduleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		305F9A37D02057AE8E47C044 /* Pods-ScheduleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleApp/Pods-ScheduleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3DC0426EB567771E30242D83 /* Pods-ScheduleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleApp.release.xcconfig"; path = "Target Support Files/Pods-ScheduleApp/Pods-ScheduleApp.release.xcconfig"; sourceTree = "<group>"; };
-		FA5EAADF25BC0BC10011A1DE /* ReportWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportWeekViewController.swift; sourceTree = "<group>"; };
-		FA5EAAE125BC0C140011A1DE /* ReportMonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMonthViewController.swift; sourceTree = "<group>"; };
-		FA5EAAED25BDB4A50011A1DE /* saveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveData.swift; sourceTree = "<group>"; };
-		FA648A1A25AB2C0F004A6FE0 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		FA648A1C25AB2C99004A6FE0 /* CountUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountUpViewController.swift; sourceTree = "<group>"; };
 		FA648A1E25AB2D09004A6FE0 /* TimerSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSettingViewController.swift; sourceTree = "<group>"; };
 		FAA42BAB25A8853A00B2D260 /* ScheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,12 +87,8 @@
 				FAA42BAE25A8853A00B2D260 /* AppDelegate.swift */,
 				FAA42BB025A8853A00B2D260 /* SceneDelegate.swift */,
 				FAA42BB225A8853A00B2D260 /* ViewController.swift */,
-				FA648A1A25AB2C0F004A6FE0 /* ReportViewController.swift */,
 				FA648A1C25AB2C99004A6FE0 /* CountUpViewController.swift */,
 				FA648A1E25AB2D09004A6FE0 /* TimerSettingViewController.swift */,
-				FA5EAADF25BC0BC10011A1DE /* ReportWeekViewController.swift */,
-				FA5EAAE125BC0C140011A1DE /* ReportMonthViewController.swift */,
-				FA5EAAED25BDB4A50011A1DE /* saveData.swift */,
 				FAA42BB425A8853A00B2D260 /* Main.storyboard */,
 				FAA42BB725A8853C00B2D260 /* Assets.xcassets */,
 				FAA42BB925A8853C00B2D260 /* LaunchScreen.storyboard */,
@@ -224,11 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5EAAE025BC0BC10011A1DE /* ReportWeekViewController.swift in Sources */,
-				FA648A1B25AB2C0F004A6FE0 /* ReportViewController.swift in Sources */,
 				FAA42BB325A8853A00B2D260 /* ViewController.swift in Sources */,
-				FA5EAAE225BC0C140011A1DE /* ReportMonthViewController.swift in Sources */,
-				FA5EAAEE25BDB4A50011A1DE /* saveData.swift in Sources */,
 				FA648A1D25AB2C99004A6FE0 /* CountUpViewController.swift in Sources */,
 				FAA42BAF25A8853A00B2D260 /* AppDelegate.swift in Sources */,
 				FA648A1F25AB2D09004A6FE0 /* TimerSettingViewController.swift in Sources */,

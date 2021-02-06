@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class CountUpViewController: UIViewController,backgroundTimerDelegate {
     
@@ -18,9 +17,6 @@ class CountUpViewController: UIViewController,backgroundTimerDelegate {
     
     var timer:Timer!
     var timer_sec = 0
-    
-    let realm = try!Realm()
-    let finishDate = Date()
     
     //SceneDelegateに追加したプロトコルにある定数
     var timerIsBackground = false
@@ -110,15 +106,6 @@ class CountUpViewController: UIViewController,backgroundTimerDelegate {
             self.timer.invalidate()
             self.timer = nil
         }
-        //Realmに終了した日付と勉強時間を保存
-        let CountUpSaveData = saveData()
-        CountUpSaveData.date = finishDate
-        CountUpSaveData.totalStudyTime_sec = self.timer_sec
-        
-        try! realm.write(){
-            realm.add(CountUpSaveData)
-        }
-        
         self.dismiss(animated: true, completion: nil)
         
     }
