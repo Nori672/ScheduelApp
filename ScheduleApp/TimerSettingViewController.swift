@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class TimerSettingViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource/*,backgroundTimerDelegate*/ {
     
@@ -34,7 +33,6 @@ class TimerSettingViewController: UIViewController,UIPickerViewDelegate,UIPicker
     var breaktimer_sec = 0
     var set = 0
     
-    let realm = try!Realm()
     let finishDate = Date()
     
 //    SceneDelegateに追加したプロトコルにある定数
