@@ -165,7 +165,7 @@ class TimerSettingViewController: UIViewController,UIPickerViewDelegate,UIPicker
             default:
                 return 0
             }
-        }else if pickerView == timePickerView {
+        }else if pickerView == breaktimePickerView {
             switch component {
             case 0:
                 return hourTime.count
