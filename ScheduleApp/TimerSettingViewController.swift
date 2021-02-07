@@ -34,7 +34,7 @@ class TimerSettingViewController: UIViewController,UIPickerViewDelegate,UIPicker
     var breaktimer_sec = 0
     var set = 0
     
-    let realm = try!Realm()
+    
     let finishDate = Date()
     
 //    SceneDelegateに追加したプロトコルにある定数
@@ -167,7 +167,7 @@ class TimerSettingViewController: UIViewController,UIPickerViewDelegate,UIPicker
             default:
                 return 0
             }
-        }else if pickerView == timePickerView {
+        }else if pickerView == breaktimePickerView {
             switch component {
             case 0:
                 return hourTime.count
